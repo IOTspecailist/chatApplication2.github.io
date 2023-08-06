@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>    
+    .div_mainFrame {
+        background-color: whitesmoke;
+        display: flex;
+        height: 100vh;
+    }
+    .menubar {
+        width: 70px;
+        background-color: rgba(185, 185, 185, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+    }
+    .menuTop, .menuBottom {
+        display: flex;
+        flex-direction: column;
+    }
+    .mainPage {
+        
+        width: 280px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div_top {
+        background-color: whitesmoke;
+        color:  rgba(185, 185, 185, 1);
+        display: flex;
+        justify-content: end;
+        padding-right: 5px;
+        padding-top:5px ;
+    }
+    .div_pageInfo{
+        background-color: whitesmoke;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-right: 15px;
+        padding-left:15px ;
+    }
+    .div_pageInfCol{
+        width: 50%;
+    }
+    .div_pageInfCol:first-child{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .div_pageInfCol:last-child{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .div_top button {
+        width: 25px;
+        height: 25px;
+    }
+    .lists{
+        background-color: whitesmoke;
+        display: block;
+        width: 100%;
+        overflow: auto;
+    }
+    .list{
+        background-color: whitesmoke;
+        cursor: pointer;
+        height: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    @keyframes divBlink {
+        0%, 100% {
+            background-color: initial;
+            opacity: 0.6;
+        }
+        50% {
+            background-color: tomato;
+            opacity: 0.6;
+        }
+    }
+
+    .list:hover {
+        will-change: transform, background-color;
+        animation: divBlink 1s linear infinite;
+    }   
+    .listColUpdateFriends{
+        display: flex;
+        margin-left: 5px;
+        margin-right: 5px;
+    } 
+    .listColFriendsList{
+        display: flex;
+    }
+    .listColFriendsListCol{
+        width: 50%;
+    }
+    .listColFriendsListCol:first-child{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+    .listColFriendsListCol:last-child{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .lsitInfo{
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: small;
+    }
+    .line{
+        display: flex;
+        justify-content: center;
+        
+        color: rgba(0, 0, 0, 0.2);
+        border: solid 1px;
+        margin-top:10px;
+        margin-bottom: 10px;
+        
+    }
+
+    .badge {
+  background-color: tomato;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.nav__notification {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    animation: notificationAnimation 1s ease-in-out infinite;
+}
+
+@keyframes appearBtnAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav__btn {
+    margin: 20px;
+   
+  transform: translateY(50px);
+  opacity: 0;
+  animation: appearBtnAnimation 0.3s ease-in-out forwards;
+}
+
+.nav__btn:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.nav__btn:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.nav__btn:last-child {
+  animation-delay: 0.4s;
+}
+#no-mobile {
+  position: absolute;
+  z-index: 99;
+  height: 100vh;
+  background-color: yellowgreen;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  top: 0;
+}
+
+@media screen and (max-width: 645px) {
+  #no-mobile {
+    display: none;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="div_mainFrame">
+        <div class="menubar">
+            <div class="menuTop">
+
+                <div class="nav__btn">
+                    <a class="nav__link" href="file:///C:/VSC_workspace/chatApplication/friend.html">
+                        <i class="fas fa-user fa-2x" style="color:black; opacity: 0.5;"></i>
+                    </a>
+                </div>
+                <div class="nav__btn">
+                    <a class="nav__link" href="file:///C:/VSC_workspace/chatApplication/chat.html">
+                        <i class="fas fa-comment-alt fa-2x" style="color:black; opacity: 0.5;"></i>
+                        <span class="nav__notification badge">12</span>
+                    </a>
+                </div>
+                <div class="nav__btn">
+                    <a class="nav__link" href="file:///C:/VSC_workspace/chatApplication/login.html">
+                        <i class="fas fa-ellipsis-h fa-2x" style="color:black; opacity: 0.5;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="menuBottom">
+                <div class="nav__btn">
+                    <a class="nav__link" href="">
+                        <i class="far fa-grin-stars fa-2x" style="color:black; opacity: 0.5;"></i>
+                    </a>
+                </div>
+                <div class="nav__btn">
+                    <a class="nav__link" href="file:///C:/VSC_workspace/chatApplication/chat.html">
+                        <i class="fas fa-bell fa-2x" style="color:black; opacity: 0.5;"></i>
+                    </a>
+                </div>
+                <div class="nav__btn">
+                    <a class="nav__link" href="file:///C:/VSC_workspace/chatApplication/login.html">
+                        <i class="fas fa-cog fa-2x" style="color:black; opacity: 0.5;"></i>
+                    </a>
+                </div>
+            </div>         
+        </div>
+        <div class="mainPage">
+            <div class="div_top">
+                <i class="fas fa-cog"></i>&nbsp&nbsp<i class="fas fa-grip-lines-vertical"></i>&nbsp&nbsp<i class="fas fa-window-minimize"></i>&nbsp<i class="fas fa-times"></i>
+            </div>
+            <div class="div_pageInfo">
+                <div class="div_pageInfCol">친구</div>
+                <div class="div_pageInfCol"> <i class="fas fa-search"></i> &nbsp&nbsp<i class="fas fa-user-plus"></i></div>
+            </div>
+
+            <div class="lists">
+                <div class="line"></div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol">steal heart - she's gone</div>
+                </div>
+                <div class="line"></div>
+                <div class="lsitInfo">업데이트한 친구</div>
+                <div class="list">
+                    <div class="listColUpdateFriends"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColUpdateFriends"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColUpdateFriends"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+                <div class="line"></div>
+                <div class="lsitInfo">생일인 친구</div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i>이강인<i class="fas fa-birthday-cake"></i></div>
+                    <div class="listColFriendsListCol">선물하기</div>
+                </div>
+                <div class="list"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i>친구의 생일을 확인해 보세요</div>
+                <div class="line"></div>
+                <div class="lsitInfo">친구</div>                
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol">steal heart - she's gone</div>
+                </div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+                <div class="list">
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                    <div class="listColFriendsListCol"><i class="fas fa-comment-alt fa-2x" style="color: deepskyblue; opacity: 0.5;"></i></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="no-mobile">
+        <span>Your screen is too big ㅠㅠ</span>
+      </div>    
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous">
+    </script>    
+</body>
+</html>

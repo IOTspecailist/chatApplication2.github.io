@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+   .div_mainFrame {
+        background-color: aqua;
+        display: block;
+        height: 100vh;
+    }
+    .div_top{
+      background-color: goldenrod;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 5px;
+        padding-top:5px ;
+    }
+    .div_chatContent {
+    width: 100%;
+    background-color: lightsteelblue;
+    height: calc(100vh - 200px);
+    overflow: auto;
+    }
+    .div_pageInfo{
+        background-color: lightsteelblue;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-right: 5px;
+        padding-top:5px ;
+    }
+    .div_pageInfCol{
+        width: 50%;
+    }
+    .div_pageInfCol:first-child{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .div_pageInfCol:last-child{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+
+
+.div_chatBottom {
+    background-color: forestgreen;
+    display: block;
+    width: 100%;
+    height: 200px;
+    position: fixed;  /* 아래에 고정하기 위해 */
+    bottom: 0;        /* 화면 아래쪽에 붙입니다 */
+}
+.div_chatBottomCol{
+  display: flex;
+  width: 100%;
+  height: 160px;
+}
+.div_chatBottomCol:first-child{
+  background-color: antiquewhite;
+  width: 70%;
+}
+.div_chatBottomCol:last-child{
+  background-color: yellow;
+  width: 30%;
+}
+
+.sendBtn{
+
+width: 10%;
+height: 170px;
+}
+.bottom_icon{
+  display: flex;
+}
+
+    </style>
+</head>
+<body>
+    <div class="div_mainFrame">
+        <div class="div_top">
+            <i class="fas fa-cog"></i>&nbsp&nbsp<i class="fas fa-grip-lines-vertical"></i>&nbsp&nbsp<i class="fas fa-window-minimize"></i>&nbsp<i class="fas fa-times"></i>
+        </div>
+        <div class="div_pageInfo">
+            <div class="div_pageInfCol">친구</div>
+            <div class="div_pageInfCol"> <i class="fas fa-search"></i> &nbsp&nbsp<i class="fas fa-user-plus"></i></div>
+        </div>             
+        <div class="div_chatContent">
+            bb
+
+        </div>
+
+        <div class="div_chatBottom">
+        <div class="div_chatBottomCol">
+          <div>1212</div>
+          <div>3333</div>
+        </div>
+
+        </div>
+
+    </div>
+    
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous">
+    </script>    
+</body>
+</html>
